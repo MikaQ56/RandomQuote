@@ -13,6 +13,8 @@
 		CA08655E213A8E040037F784 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA08655D213A8E040037F784 /* Assets.xcassets */; };
 		CA086561213A8E040037F784 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA08655F213A8E040037F784 /* LaunchScreen.storyboard */; };
 		CA08656C213A8E040037F784 /* ClassQuoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA08656B213A8E040037F784 /* ClassQuoteTests.swift */; };
+		CA08657B213A9BCB0037F784 /* QuoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA08657A213A9BCB0037F784 /* QuoteService.swift */; };
+		CA08657D213AC2FB0037F784 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA08657C213AC2FB0037F784 /* Quote.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		CA086567213A8E040037F784 /* ClassQuoteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClassQuoteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA08656B213A8E040037F784 /* ClassQuoteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassQuoteTests.swift; sourceTree = "<group>"; };
 		CA08656D213A8E040037F784 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA08657A213A9BCB0037F784 /* QuoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteService.swift; sourceTree = "<group>"; };
+		CA08657C213AC2FB0037F784 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,8 @@
 		CA086576213A8E390037F784 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CA08657A213A9BCB0037F784 /* QuoteService.swift */,
+				CA08657C213AC2FB0037F784 /* Quote.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -229,7 +235,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA08657D213AC2FB0037F784 /* Quote.swift in Sources */,
 				CA086559213A8E020037F784 /* ViewController.swift in Sources */,
+				CA08657B213A9BCB0037F784 /* QuoteService.swift in Sources */,
 				CA086557213A8E020037F784 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
