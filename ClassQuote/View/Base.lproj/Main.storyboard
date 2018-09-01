@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ClassQuote" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ESt-E7-8Ek">
+                                <rect key="frame" x="16" y="601" width="343" height="46"/>
+                                <color key="backgroundColor" red="0.5725490196078431" green="0.18431372549019609" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ESt-E7-8Ek" secondAttribute="height" multiplier="343:46" id="suM-eN-TqD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
+                                <state key="normal" title="New Quote">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="tappedNewQuoteButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="gnr-QU-2Qs"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="b3l-is-ING">
+                                <rect key="frame" x="16" y="20" width="343" height="244"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="b3l-is-ING" secondAttribute="height" multiplier="343:244" id="aYv-tl-HlG"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="srt-Dk-k4l">
+                                <rect key="frame" x="16" y="20" width="343" height="244"/>
+                                <color key="backgroundColor" red="0.83921568627450982" green="0.83921568627450982" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="srt-Dk-k4l" secondAttribute="height" multiplier="343:244" id="OXq-cF-YhQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jean l'auteur" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lXV-NQ-xSn">
+                                <rect key="frame" x="16" y="272" width="343" height="21"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="nOe-ua-kA4">
+                                <rect key="frame" x="177" y="614" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.95686274509803915" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="srt-Dk-k4l" secondAttribute="trailing" constant="16" id="0ZW-uN-ryy"/>
+                            <constraint firstItem="srt-Dk-k4l" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="57A-5I-at3"/>
+                            <constraint firstItem="b3l-is-ING" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Do7-cr-eL5"/>
+                            <constraint firstItem="b3l-is-ING" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="GL5-x7-He0"/>
+                            <constraint firstItem="nOe-ua-kA4" firstAttribute="centerY" secondItem="ESt-E7-8Ek" secondAttribute="centerY" id="Goi-ue-f4o"/>
+                            <constraint firstItem="nOe-ua-kA4" firstAttribute="centerX" secondItem="ESt-E7-8Ek" secondAttribute="centerX" id="L0E-Jz-dm6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ESt-E7-8Ek" secondAttribute="bottom" constant="20" id="M4T-IR-Pz0"/>
+                            <constraint firstItem="lXV-NQ-xSn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="RQh-Yn-xCK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ESt-E7-8Ek" secondAttribute="trailing" constant="16" id="YRN-NF-bdx"/>
+                            <constraint firstItem="ESt-E7-8Ek" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="f7X-9B-oP3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="b3l-is-ING" secondAttribute="trailing" constant="16" id="fIM-Ha-3Yj"/>
+                            <constraint firstItem="srt-Dk-k4l" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="l42-Xd-oCD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lXV-NQ-xSn" secondAttribute="trailing" constant="16" id="r5x-of-JEt"/>
+                            <constraint firstItem="lXV-NQ-xSn" firstAttribute="top" secondItem="srt-Dk-k4l" secondAttribute="bottom" constant="8" id="sHU-pa-Qcz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="nOe-ua-kA4" id="78i-Mc-5Uf"/>
+                        <outlet property="authorLabel" destination="lXV-NQ-xSn" id="k1V-Tp-ujl"/>
+                        <outlet property="imageView" destination="b3l-is-ING" id="sd1-hn-bdm"/>
+                        <outlet property="newQuoteButton" destination="ESt-E7-8Ek" id="EHA-Qu-JjS"/>
+                        <outlet property="quotelabel" destination="srt-Dk-k4l" id="Xru-Xp-acJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+</document>
