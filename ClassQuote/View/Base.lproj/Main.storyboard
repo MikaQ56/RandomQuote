@@ -30,35 +30,37 @@
                                     <action selector="tappedNewQuoteButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="gnr-QU-2Qs"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="b3l-is-ING">
-                                <rect key="frame" x="16" y="30" width="343" height="244"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="b3l-is-ING">
+                                <rect key="frame" x="16" y="30" width="343" height="343"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="b3l-is-ING" secondAttribute="height" multiplier="343:244" id="aYv-tl-HlG"/>
+                                    <constraint firstAttribute="width" secondItem="b3l-is-ING" secondAttribute="height" multiplier="1:1" id="jVS-9f-KHN"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="srt-Dk-k4l">
-                                <rect key="frame" x="16" y="30" width="343" height="244"/>
+                                <rect key="frame" x="16" y="30" width="343" height="343"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="srt-Dk-k4l" secondAttribute="height" multiplier="343:244" id="OXq-cF-YhQ"/>
+                                    <constraint firstAttribute="width" secondItem="srt-Dk-k4l" secondAttribute="height" multiplier="1:1" id="d0m-oP-bc9"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="nOe-ua-kA4">
+                                <rect key="frame" x="177.5" y="621" width="20" height="20"/>
+                                <color key="color" red="0.5725490196078431" green="0.18431372549019609" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jean l'auteur" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lXV-NQ-xSn">
-                                <rect key="frame" x="16" y="282" width="343" height="21"/>
+                                <rect key="frame" x="16" y="381" width="343" height="21"/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="nOe-ua-kA4">
-                                <rect key="frame" x="177.5" y="621" width="20" height="20"/>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.95686274509803915" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="srt-Dk-k4l" secondAttribute="trailing" constant="16" id="0ZW-uN-ryy"/>
                             <constraint firstItem="srt-Dk-k4l" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="57A-5I-at3"/>
+                            <constraint firstItem="lXV-NQ-xSn" firstAttribute="top" secondItem="b3l-is-ING" secondAttribute="bottom" constant="8" id="78H-eP-9t5"/>
                             <constraint firstItem="b3l-is-ING" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="Do7-cr-eL5"/>
                             <constraint firstItem="b3l-is-ING" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="GL5-x7-He0"/>
                             <constraint firstItem="nOe-ua-kA4" firstAttribute="centerY" secondItem="ESt-E7-8Ek" secondAttribute="centerY" id="Goi-ue-f4o"/>
@@ -69,7 +71,6 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ESt-E7-8Ek" secondAttribute="bottom" constant="19" id="hYf-VM-huH"/>
                             <constraint firstItem="srt-Dk-k4l" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="l42-Xd-oCD"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lXV-NQ-xSn" secondAttribute="trailing" constant="16" id="r5x-of-JEt"/>
-                            <constraint firstItem="lXV-NQ-xSn" firstAttribute="top" secondItem="srt-Dk-k4l" secondAttribute="bottom" constant="8" id="sHU-pa-Qcz"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ESt-E7-8Ek" secondAttribute="trailing" constant="19" id="uQn-O3-h5Q"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -84,7 +85,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.5" y="133.5"/>
+            <point key="canvasLocation" x="135.19999999999999" y="132.68365817091455"/>
         </scene>
     </scenes>
 </document>

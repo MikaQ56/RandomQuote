@@ -14,34 +14,44 @@ class QuoteService {
     private let quoteUrl = URL(string: "https://api.forismatic.com/api/1.0/")!
     private let pictureUrl = URL(string: "https://source.unsplash.com/random")!
     private var task: URLSessionDataTask?
+    private var quoteSession = URLSession(configuration: .default)
+    private var imageSession = URLSession(configuration: .default)
+    
+    init(quoteSession: URLSession, imageSession: URLSession) {
+        self.quoteSession = quoteSession
+        self.imageSession = imageSession
+    }
     
     func getQuote(callback: @escaping (Bool, Quote?)->Void) {
         let request = createQuoteRequest()
-        let session = URLSession(configuration: .default)
+        
         task?.cancel()
-        task = session.dataTask(with: request) { (data, response, error) in
+        task = quoteSession.dataTask(with: request) { (data, response, error) in
             DispatchQueue.main.async {
-                if let data = data, error == nil {
-                    if let response = response as? HTTPURLResponse, response.statusCode == 200 {
-                        if let responseJSON = try? JSONDecoder().decode([String: String].self, from: data),
-                            let text = responseJSON["quoteText"],
-                            let author = responseJSON["quoteAuthor"] {
-                            self.getImage { (data) in
-                                if let data = data {
-                                    let quote = Quote(text: text, author: author, imageData: data)
-                                    callback(true, quote)
-                                } else {
-                                    callback(false, nil)
-                                }
-                            }
-                        } else {
-                            callback(false, nil)
-                        }
-                    } else {
-                        callback(false, nil)
-                    }
-                } else {
+                guard let data = data, error == nil else {
                     callback(false, nil)
+                    return
+                }
+                guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                    callback(false, nil)
+                    return
+                }
+                guard
+                    let responseJSON = try? JSONDecoder().decode([String: String].self, from: data),
+                    let text = responseJSON["quoteText"],
+                    let author = responseJSON["quoteAuthor"]
+                    else {
+                    callback(false, nil)
+                    return
+                }
+                
+                self.getImage { (data) in
+                    guard let data = data else {
+                        callback(false, nil)
+                        return
+                    }
+                    let quote = Quote(text: text, author: author, imageData: data)
+                    callback(true, quote)
                 }
             }
         }
@@ -49,19 +59,18 @@ class QuoteService {
     }
     
     private func getImage(completionHandler: @escaping (Data?)->Void) {
-        let session = URLSession(configuration: .default)
         task?.cancel()
-        task = session.dataTask(with: pictureUrl) { (data, response, error) in
+        task = imageSession.dataTask(with: pictureUrl) { (data, response, error) in
             DispatchQueue.main.async {
-                if let data = data, error == nil {
-                    if let response = response as? HTTPURLResponse, response.statusCode == 200 {
-                        completionHandler(data)
-                    } else {
-                        completionHandler(nil)
-                    }
-                } else {
+                guard let data = data, error == nil else {
                     completionHandler(nil)
+                    return
                 }
+                guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                    completionHandler(nil)
+                    return
+                }
+                completionHandler(data)
             }
         }
         task?.resume()
